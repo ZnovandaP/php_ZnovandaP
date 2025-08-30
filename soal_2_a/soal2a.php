@@ -113,6 +113,12 @@ $hobi = $db->getHobi('hobi.hobi LIKE LOWER(:hobi)', ['hobi' => "%$searchHobiLowe
           <td><?= $h['jumlah'] ?></td>
         </tr>
       <?php endforeach; ?>
+
+      <?php
+      if (!$hobi) {
+        echo "<tr><td colspan='2'>Tidak ada data</td></tr>";
+      }
+      ?>
     </tbody>
 
   </table>
